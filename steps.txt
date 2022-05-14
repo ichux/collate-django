@@ -1,0 +1,6 @@
+# migrate DB
+python manage.py migrate --database=mysql
+python manage.py migrate --database=psql
+
+# create a superuser
+python manage.py createsuperuser --database psql --username ichux
