@@ -1,0 +1,6 @@
+# my.cnf
+[client]
+database = business
+user = root
+password = e81bc8e51
+default-character-set = utf8

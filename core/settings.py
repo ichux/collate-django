@@ -77,10 +77,10 @@ WSGI_APPLICATION = "core.wsgi.application"
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    },
+    # "default": {
+    #     "ENGINE": "django.db.backends.sqlite3",
+    #     "NAME": BASE_DIR / "db.sqlite3",
+    # },
     "psql": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": "business",
@@ -89,6 +89,14 @@ DATABASES = {
         "HOST": "localhost",
         "PORT": "5432",
     },
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "ondev",
+        "USER": "postgres",
+        "PASSWORD": "",
+        "HOST": "localhost",
+        "PORT": "15432",
+    },
     "mysql": {
         "ENGINE": "django.db.backends.mysql",
         "NAME": "business",
@@ -96,6 +104,13 @@ DATABASES = {
         "PASSWORD": "e81bc8e51",
         "HOST": "localhost",
         "PORT": "3306",
+        "init_command": "SET storage_engine=INNODB",
+    },
+    "mysql2": {
+        "ENGINE": "django.db.backends.mysql",
+        "OPTIONS": {
+            "read_default_file": BASE_DIR / "mysql.cnf",
+        },
         "init_command": "SET storage_engine=INNODB",
     },
 }
